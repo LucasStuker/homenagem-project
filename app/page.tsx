@@ -11,6 +11,7 @@ import {
   Flame,
   Star,
   Award,
+  Flower2,
 } from "lucide-react";
 
 // 1. Definição do Tipo
@@ -93,8 +94,9 @@ export default function SpotifyMemories() {
       <header className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-zinc-900 px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Clock3 className="w-5 h-5 text-rose-500" />
-          <h1 className="text-lg font-bold tracking-tight text-white">
-            Nossas Memórias
+          <h1 className="text-lg font-bold tracking-tight text-white flex items-center gap-2">
+            Parabéns pelo dia da mulher
+            <Flower2 className="w-5 h-5 text-rose-500" />
           </h1>
         </div>
         <Heart className="w-6 h-6 text-rose-500 fill-rose-500 animate-pulse" />
