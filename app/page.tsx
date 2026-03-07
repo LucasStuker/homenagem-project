@@ -69,6 +69,7 @@ export default function SpotifyMemories() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [musicStarted, setMusicStarted] = useState(false);
   const [showHearts, setShowHearts] = useState(false);
+  const [showPlayer, setShowPlayer] = useState(false);
 
   const startExperience = () => {
     if (musicStarted) return;
@@ -121,16 +122,18 @@ export default function SpotifyMemories() {
 
   return (
     <>
-      {musicStarted && (
-        <iframe
-          width="0"
-          height="0"
-          className="absolute opacity-0 pointer-events-none"
-          src="https://www.youtube.com/embed/dBWFUVq85gs?autoplay=1&loop=1&playlist=dBWFUVq85gs"
-          title="Música de fundo"
-          frameBorder="0"
-          allow="autoplay"
-        />
+      {showPlayer && (
+        <div className="fixed bottom-4 right-4 z-[999] w-[1px] h-[1px] overflow-hidden opacity-0">
+          <iframe
+            width="300"
+            height="80"
+            src="https://www.youtube.com/embed/dBWFUVq85gs?autoplay=1&loop=1&playlist=dBWFUVq85gs"
+            title="Música de fundo"
+            frameBorder="0"
+            allow="autoplay; encrypted-media"
+            allowFullScreen
+          />
+        </div>
       )}
       <main className="min-h-screen bg-black text-white font-sans selection:bg-rose-500 pb-10">
         {showHearts && (
@@ -168,6 +171,16 @@ export default function SpotifyMemories() {
           </div>
           <Heart className="w-6 h-6 text-rose-500 fill-rose-500 animate-pulse" />
         </header>
+        {!showPlayer && (
+          <div className="pt-24 px-4 max-w-md mx-auto">
+            <button
+              onClick={() => setShowPlayer(true)}
+              className="w-full rounded-full bg-rose-500 hover:bg-rose-600 transition-colors text-white font-bold py-3 shadow-lg shadow-rose-950/40"
+            >
+              Tocar música 🎵
+            </button>
+          </div>
+        )}
         {/* ÁREA DO STORY */}
         <section className="pt-20 px-4 w-full max-w-md mx-auto">
           {/* Container Principal do Story */}
