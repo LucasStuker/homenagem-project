@@ -280,7 +280,7 @@ export default function SpotifyMemories() {
             </div>
           </article>
 
-          {/* Card 2: Lucas (Chef de Cozinha) */}
+          {/* Card 2: ruby  */}
           <article className="bg-zinc-900/50 p-6 rounded-3xl border border-zinc-800 text-left shadow-xl backdrop-blur-sm relative hover:border-rose-800 transition-colors duration-300">
             <div className="flex gap-1 mb-4">
               {[...Array(4)].map((_, i) => (
